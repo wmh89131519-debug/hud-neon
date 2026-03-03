@@ -20,7 +20,7 @@ from PyQt6.QtGui import QColor
 from enum import Enum
 
 from .widgets import SidebarSettings, ParticipantsPanel, ConversationView, ControlBar
-from .design_system import apply_neon_theme, glow
+from ..design_system import apply_neon_theme, glow
 from .input import InputBar
 
 
@@ -360,9 +360,9 @@ class ChatBoardWindow(QWidget):
         try:
             apply_neon_theme(self)
             # 给关键元素加一点发光，增强科技感
-            glow(self._title_bar._title_block, radius=8)
-            glow(self._title_bar._globe, radius=4)
-            glow(self._title_bar._title, radius=4)
+            glow(self._title_bar._title_block, blur_radius=8)
+            glow(self._title_bar._globe, blur_radius=4)
+            glow(self._title_bar._title, blur_radius=4)
         except Exception:
             pass
 
